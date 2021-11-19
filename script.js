@@ -24,8 +24,6 @@ var pool  = mysql.createConnection({
 
 pool.connect();
 
-const { nuevoCurso, getCursos, editCurso, deleteCurso } = require("./pool");
-
 app.post("/curso", async (req, res) => {
     const curso = (req.body);
     pool.query(`INSERT INTO cursos values (0, '${ curso.nombre }', ${curso.nivelTecnico}, '${curso.fechaInicio}', ${curso.duracion})`, function (error, results, fields) {
