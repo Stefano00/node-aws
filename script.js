@@ -3,6 +3,7 @@ const app = express();
 //const { PORT = 3000 } = process.env;
 const bodyParser = require("body-parser");
 const cors = require('cors');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,6 +24,10 @@ var pool  = mysql.createConnection({
 
 
 pool.connect();
+
+app.get('/',function(req,res) {
+    res.sendFile(path.join(__dirname+'/index.html'));
+  });
 
 app.post("/curso", async (req, res) => {
     const curso = (req.body);
