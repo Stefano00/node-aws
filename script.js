@@ -6,7 +6,7 @@ const cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.listen(443);
+app.listen(3000);
 
 app.use(cors({
     origin: '*'
