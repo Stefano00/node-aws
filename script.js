@@ -26,6 +26,7 @@ var pool  = mysql.createConnection({
 pool.connect();
 
 app.get('/',function(req,res) {
+    console.log("prueba index");
     res.sendFile(path.join(__dirname+'/index.html'));
   });
 
